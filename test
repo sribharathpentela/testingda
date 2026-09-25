@@ -11,3 +11,13 @@ response = w.serving_endpoints.predict(
     }
 )
 print("LLM Response:", response)
+
+
+Write a complete, production-ready Python cell for our agent codebase that demonstrates two key integrations on Serverless compute:
+
+1. Foundation Model Invocation: Connect to available Databricks Foundation Model endpoints (e.g. databricks-claude-haiku-4-5 or databricks-claude-sonnet-4-5) using databricks-sdk or databricks-langchain (ChatDatabricks) to send a prompt and parse a structured JSON response.
+
+2. Secret Scope Retrieval: Retrieve our GitHub PAT token (HON_AZURE_PAT) securely from Secret Scope ips_agent_modernization using dbutils.secrets.get().
+
+Please provide the full Python code snippet with proper error handling, logging, and fallback logic so we can copy it into our agent's src/llm/ client module."
+
