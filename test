@@ -1,1 +1,13 @@
-hi
+# Standalone cell to test calling Databricks LLM
+from databricks.sdk import WorkspaceClient
+w = WorkspaceClient()
+# Test calling Databricks Foundation Model (Claude Haiku / Gemma)
+response = w.serving_endpoints.predict(
+    name="databricks-claude-haiku-4-5",
+    json={
+        "messages": [
+            {"role": "user", "content": "Return JSON: {\"status\": \"ok\", \"agent\": \"DA\"}"}
+        ]
+    }
+)
+print("LLM Response:", response)
